@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Zone - Videojuegos y Consolas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+
+        html, body {
+          overflow-x: hidden; 
+          width: 100%; 
+          }
+        body {
+            background-color: #1a1a1a; 
+            color: #f0f0f0;
+        }
+        .navbar {
+            background-color: #3f51b5 !important; 
+        }
+        .navbar-brand, .nav-link, .btn-primary {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+        .section-title {
+            color: #ff9800; 
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background-color: #2c2c2c;
+            border: 1px solid #444444;
+            color: #f0f0f0;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .img-placeholder {
+            background-color: #555555;
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #777;
+        }
+        #carruselBannerPrincipal {
+            width: 100%; 
+            margin: 0 auto;
+        }
+        .carousel-inner.banner-placeholder {
+            height: auto;
+            display: block;
+        }
+        .carousel-banner-img {
+            object-fit: cover;
+            height: 800px; 
+        }
+        .banner-placeholder {
+            background-color: #4CAF50; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px #000;
+        }
+        .btn-primary {
+            background-color: #ff5722; 
+            border-color: #ff5722;
+        }
+        .btn-primary:hover {
+            background-color: #e64a19;
+            border-color: #e64a19;
+        }
+
+      .nav-tabs .nav-link.active {
+       background-color: #3f51b5 !important; 
+       color: #ffffff !important;
+       border-color: #3f51b5 !important;
+}
+
+      .nav-tabs .nav-link {
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      border: 1px solid #444;
+      margin-right: 5px;
+}
+
+    .nav-tabs .nav-link:hover {
+    background-color: #505cc5;
+    color: #fff;
+}
+
+   
+    .card .text-muted {
+      color: #ffffff !important;
+    }
+
+    .card .text-info {
+    color: #33b5ff !important;
+    }
+
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="50">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">🎮 Gamer Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas / Promociones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carrito"><i class="bi bi-cart"></i> Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3"> 
+        <section id="home" class="py-3"> 
+         <p>Alumnos:</p>
+        <p>Jorge Rafid Medina Porras </p>
+        <p> Miguel Moises Olivares Novelo</p>
+        <p>Rudy Daniel Navarrete Catzin </p>
+            <h1 class="section-title text-center">¡Bienvenido a la Zona Gamer!</h1>
+            
+            
+            <div id="carruselBannerPrincipal" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner"> 
+                    <div class="carousel-item active">
+                        <img src="imagenes/1er.jpg" class="carousel-banner-img d-block w-100" alt="Banner Slide 1: Promociones Destacadas" onerror="this.src='//via.placeholder.com/1200x500/4CAF50/FFFFFF?text=PROMO+1'">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Grandes Descuentos de Lanzamiento</h5>
+                            <p>¡Aprovecha hasta 50% en títulos seleccionados!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/gtavl.jpg" class="carousel-banner-img d-block w-100" alt="Banner Slide 2: Nuevos Videojuegos" onerror="this.src='//via.placeholder.com/1200x500/3F51B5/FFFFFF?text=VIDEOJUEGO+NUEVO'">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Lanzamiento Exclusivo - ¡Ya Disponible!</h5>
+                            <p>El juego más esperado de la temporada.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/ps.jpg" class="carousel-banner-img d-block w-100" alt="Banner Slide 3: Consolas o Hardware" onerror="this.src='//via.placeholder.com/1200x500/FF9800/1A1A1A?text=CONSOLA+NEXT+GEN'">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>¡Consolas Next-Gen en Stock!</h5>
+                            <p>Unidades limitadas. ¡Compra la tuya hoy!</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="row text-center mb-5">
+                <div class="col-md-4 mb-3">
+                    <a href="#productos" class="btn btn-lg w-100 btn-primary">Ver Catálogo</a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="#ofertas" class="btn btn-lg w-100 btn-primary">Ofertas</a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="#novedades" class="btn btn-lg w-100 btn-primary">Nuevos Lanzamientos</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">🔥 Productos Populares de la Semana</h2>
+            <div id="carruselPopulares" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card p-3 text-center">
+                                    <img src="imagenes/fia.jpeg" class="img-placeholder" alt="Juego Popular 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Juego FC25</h5>
+                                        <p class="card-text text-warning">¡Más Vendido!</p>
+                                        <a href="#productos" class="btn btn-sm btn-outline-light">Ver Detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card p-3 text-center">
+                                    <img src="imagenes/xbox.jpg" class="img-placeholder" alt="Consola Popular">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Consola Xbox One X</h5>
+                                        <p class="card-text text-warning">Stock Limitado</p>
+                                        <a href="#productos" class="btn btn-sm btn-outline-light">Ver Consolas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card p-3 text-center">
+                                    <img src="imagenes/au.jpg" class="img-placeholder" alt="Accesorio Gamer">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Audífonos Pro</h5>
+                                        <p class="card-text text-warning">Recomendado</p>
+                                        <a href="#productos" class="btn btn-sm btn-outline-light">Ver Accesorios</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselPopulares" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselPopulares" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+    </div>
+            <h2 class="section-title" id="novedades">📰 Novedades y Noticias Gamer</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3">
+                        <img src="imagenes/jura.jpg" class="img-fluid rounded mb-3" alt="Espacio para noticia 1" style="height: 150px; object-fit: cover;">
+                        <h5>Jurassic World Evolution 3 anuncia fecha de lanzamiento</h5>
+                        <p class="text-muted small">3 de Noviembre, 2025</p>
+                        <p>Los desarrolladores confirman la fecha de lanzamiento para la esperada secuela de fantasía...</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3">
+                        <img src="imagenes/g.png" class="img-fluid rounded mb-3" alt="Espacio para noticia 2" style="height: 150px; object-fit: cover;">
+                        <h5>¡Gears of War regresa y llega a PS5 con una versión renovada!</h5>
+                        <p class="text-muted small">>3 de Noviembre, 2025</p>
+                        <p>Gears of War, una de las sagas más famosas y reconocidas de la industria del gaming....</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="border-secondary">
+
+        <section id="productos" class="py-5">
+            <h1 class="section-title text-center">🕹️ Nuestro Catálogo de Productos</h1>
+            
+            <ul class="nav nav-tabs justify-content-center mb-4" id="productTabs" role="tablist">
+                <li class="nav-item" role="presentation"><button class="nav-link active" id="digital-tab" data-bs-toggle="tab" data-bs-target="#digital" type="button" role="tab" aria-controls="digital" aria-selected="true">Videojuegos Digitales</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="fisico-tab" data-bs-toggle="tab" data-bs-target="#fisico" type="button" role="tab" aria-controls="fisico" aria-selected="false">Videojuegos Físicos</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="consolas-tab" data-bs-toggle="tab" data-bs-target="#consolas" type="button" role="tab" aria-controls="consolas" aria-selected="false">Consolas</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="componentes-tab" data-bs-toggle="tab" data-bs-target="#componentes" type="button" role="tab" aria-controls="componentes" aria-selected="false">Componentes Gamer</button></li>
+                <li class="nav-item" role="presentation"><button class="nav-link" id="accesorios-tab" data-bs-toggle="tab" data-bs-target="#accesorios" type="button" role="tab" aria-controls="accesorios" aria-selected="false">Accesorios</button></li>
+            </ul>
+
+            <div class="tab-content" id="productTabsContent">
+                
+                <div class="tab-pane fade show active" id="digital" role="tabpanel" aria-labelledby="digital-tab">
+                    
+                    <h3 class="text-warning mb-3">Videojuegos Digitales</h3>
+                    
+                    <div class="row mb-4 bg-dark p-3 rounded">
+                        <div class="col-md-6">
+                            <label class="form-label text-light">Categoría por Plataforma:</label>
+                            <select class="form-select bg-secondary text-white">
+                                <option selected>Todas</option>
+                                <option>PC</option>
+                                <option>PlayStation</option>
+                                <option>Xbox</option>
+                                <option>Nintendo</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label text-light">Filtros por Género:</label>
+                            <select class="form-select bg-secondary text-white">
+                                <option selected>Cualquier Género</option>
+                                <option>Acción</option>
+                                <option>Aventura</option>
+                                <option>Deportes</option>
+                                <option>RPG</option>
+                                <option>Estrategia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/cyberpunk.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Digital 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Cyberpunk 2077</h5>
+                                    <p class="card-text small text-muted">Plataforma: PC | Género: Acción/RPG</p>
+                                    <h4 class="text-danger">MXN $1660.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/NBA.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Digital 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">NBA 2K25</h5>
+                                    <p class="card-text small text-muted">Plataforma: Xbox | Género: Deportes</p>
+                                    <h4 class="text-danger">MXN $1400.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/Doom.png" class="img-placeholder" alt="Espacio para Portada de Juego Digital 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">DOOM: The Dark Ages</h5>
+                                    <p class="card-text small text-muted">Plataforma: PC | Género: Acción</p>
+                                    <h4 class="text-danger">MXN $1200.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/god.png" class="img-placeholder" alt="Espacio para Portada de Juego Digital 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">God of War: Ragnarök</h5>
+                                    <p class="card-text small text-muted">Plataforma: Xbox | Género: Acción/RPG</p>
+                                    <h4 class="text-danger">MXN $1000.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/marveljpeg.jpeg" class="img-placeholder" alt="Espacio para Portada de Juego Digital 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Marvel 1943: Rise of Hydra</h5>
+                                    <p class="card-text small text-muted">Plataforma: PlayStation | Género: Acción/RPG</p>
+                                    <h4 class="text-danger">MXN $1600.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/mar.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Digital 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Super Mario Bros. Wonder</h5>
+                                    <p class="card-text small text-muted">Plataforma: Nintendo | Género: Aventura</p>
+                                    <h4 class="text-danger">MXN $1300.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/marvelsr.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Digital 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Marvel's Spider-Man 2</h5>
+                                    <p class="card-text small text-muted">Plataforma: PlayStation | Género: Acción/Aventura</p>
+                                    <h4 class="text-danger">MXN $1200.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/save.png" class="img-placeholder" alt="Espacio para Portada de Juego Digital 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Death Stranding 2: On the Beach</h5>
+                                    <p class="card-text small text-muted">Plataforma: PC | Género: Acción/RPG</p>
+                                    <h4 class="text-danger">MXN $1350.00</h4>
+                                    <a href="#" class="btn btn-primary w-100"><i class="bi bi-bag-plus"></i> Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                    <div class="row justify-content-center mt-3">
+                      <div class="col-md-4 mb-3">
+                        <a href="videojuegos-digitales.html" class="btn btn-lg w-100 btn-primary">Ver Más</a>
+
+                      </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="fisico" role="tabpanel" aria-labelledby="fisico-tab">
+                    <h3 class="text-warning mb-3">Videojuegos Físicos</h3>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/mar22.png" class="img-placeholder" alt="Espacio para Portada de Juego Físico 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Mario Kart 8 Deluxe</h5>
+                                    <p class="card-text small text-muted">Plataforma: Nintendo </p>
+                                    <p class="text-success fw-bold">STOCK: 20 unidades</p>
+                                    <h4 class="text-danger">MXN $1150.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Envío a Domicilio</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/WWE.png" class="img-placeholder" alt="Espacio para Portada de Juego Físico 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">WWE 2K25</h5>
+                                    <p class="card-text small text-muted">Plataforma: Xbox</p>
+                                    <p class="text-danger fw-bold">STOCK: 3 unidades</p>
+                                    <h4 class="text-danger">$55.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Recogida en Tienda</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/gta5.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Físico 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Grand Theft Auto V </h5>
+                                    <p class="card-text small text-muted">Plataforma: Xbox </p>
+                                    <p class="text-success fw-bold">STOCK: 100 unidades</p>
+                                    <h4 class="text-danger">MXN $800.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Envío a Domicilio</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/MINE.png" class="img-placeholder" alt="Espacio para Portada de Juego Físico 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Minecraft</h5>
+                                    <p class="card-text small text-muted">Plataforma: PlayStation </p>
+                                    <p class="text-success fw-bold">STOCK: 300 unidades</p>
+                                    <h4 class="text-danger">MXN $575.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Envío a Domicilio</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/Rl.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Físico 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Red Dead Redemption 2</h5>
+                                    <p class="card-text small text-muted">Plataforma: Xbox </p>
+                                    <p class="text-success fw-bold">STOCK: 78 unidades</p>
+                                    <h4 class="text-danger">MXN $950.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Recogida en Tienda</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/EGS_EASPORTSMadden.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Físico 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Madden NFL 25</h5>
+                                    <p class="card-text small text-muted">Plataforma: PlayStation </p>
+                                    <p class="text-success fw-bold">STOCK: 63 unidades</p>
+                                    <h4 class="text-danger">MXN $1220.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Envío a Domicilio</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/ani.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Físico 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Animal Crossing: New Horizons</h5>
+                                    <p class="card-text small text-muted">Plataforma: Nintendo </p>
+                                    <p class="text-success fw-bold">STOCK: 80 unidades</p>
+                                    <h4 class="text-danger">MXN $1100.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Envío a Domicilio</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="card h-100">
+                                <img src="imagenes/call.jpg" class="img-placeholder" alt="Espacio para Portada de Juego Físico 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">Call of Duty: Black Ops 6</h5>
+                                    <p class="card-text small text-muted">Plataforma: Xbox</p>
+                                    <p class="text-danger fw-bold">STOCK: 2 unidades</p>
+                                    <h4 class="text-danger">$1405.00</h4>
+                                    <button class="btn btn-sm btn-outline-light mb-2">Recogida en Tienda</button>
+                                    <a href="#" class="btn btn-primary w-100">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row justify-content-center mt-3">
+                      <div class="col-md-4 mb-3">
+                       <a href="videojuegos-fisicos.html" class="btn btn-lg w-100 btn-primary">Ver Más</a>
+
+                      </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="consolas" role="tabpanel" aria-labelledby="consolas-tab">
+                    <h3 class="text-warning mb-3">Consolas de Videojuegos</h3>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 p-3">
+                                <img src="imagenes/p.png" class="img-placeholder" alt="Espacio para imagen de PlayStation">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">PlayStation 5 (Edición Estándar)</h5>
+                                    <p class="card-text small">**Descripción Técnica:** SSD Ultrarrápido, Ray Tracing, 4K/120fps. Incluye Mando DualSense.</p>
+                                    <h4 class="text-danger">MXN $13,000.00</h4>
+                                    <a href="#" class="btn btn-primary w-100">Comprar Consola</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 p-3">
+                                <img src="imagenes/xbox.jpg" class="img-placeholder" alt="Espacio para imagen de Xbox Series X">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">Xbox Series X</h5>
+                                    <p class="card-text small">**Descripción Técnica:** 12 TFLOPS de potencia, 1TB SSD. Compatible con miles de juegos de generaciones anteriores.</p>
+                                    <h4 class="text-danger">MXN $7,000.00</h4>
+                                    <a href="#" class="btn btn-primary w-100">Comprar Consola</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 p-3">
+                                <img src="imagenes/nin.png" class="img-placeholder" alt="Espacio para imagen de Nintendo Switch (Modelo OLED)">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">Nintendo Switch (Modelo OLED)</h5>
+                                    <p class="card-text small">**Descripción Técnica:** Pantalla OLED de 7", 64GB de almacenamiento, modo portátil y de sobremesa.</p>
+                                    <h4 class="text-danger">MXN $7,500.00</h4>
+                                    <a href="#" class="btn btn-primary w-100">Comprar Consola</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 p-3">
+                                <img src="imagenes/xs.png" class="img-placeholder" alt="Espacio para imagen de Xbox Series X">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">Xbox Series S</h5>
+                                    <p class="card-text small">**Descripción Técnica:** 4 TFLOPS de potencia, 512GB SSD. Compatible con miles de juegos de generaciones anteriores.</p>
+                                    <h4 class="text-danger">MXN $6,500.00</h4>
+                                    <a href="#" class="btn btn-primary w-100">Comprar Consola</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 p-3">
+                                <img src="imagenes/lite.png" class="img-placeholder" alt="Espacio para imagen de Nintendo Switch Lite">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">Nintendo Switch Lite</h5>
+                                    <p class="card-text small">**Descripción Técnica:** Pantalla de 5.5", 32GB de almacenamiento, modo portátil.</p>
+                                    <h4 class="text-danger">MXN $5,500.00</h4>
+                                    <a href="#" class="btn btn-primary w-100">Comprar Consola</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100 p-3">
+                                <img src="imagenes/ps.jpg" class="img-placeholder" alt="Espacio para imagen de PLAYSTATION 5 PRO">
+                                <div class="card-body">
+                                    <h5 class="card-title text-info">PlayStation 5 Pro</h5>
+                                    <p class="card-text small">**Descripción Técnica:** SSD de 2 TB, y soporte para Wi-Fi 7. Está diseñada para ofrecer experiencias de juego mejoradas en 4K y hasta 120fps en juegos compatibles.</p>
+                                    <h4 class="text-danger">MXN $19,500.00</h4>
+                                    <a href="#" class="btn btn-primary w-100">Comprar Consola</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <div class="row justify-content-center mt-3">
+                        <div class="col-md-4 mb-3">
+                   <a href="consolas.html" class="btn btn-lg w-100 btn-primary">Ver Más</a>
+
+                      </div>
+                    </div>
+
+                </div>
+
+               <div class="tab-pane fade" id="componentes" role="tabpanel" aria-labelledby="componentes-tab">
+              <h3 class="text-warning mb-3">Componentes de PC Gamer</h3>
+              <div class="row">
+              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+             <div class="card h-100">
+             <img src="imagenes/ta.jpg" class="img-placeholder" alt="Espacio para Tarjeta Gráfica">
+            <div class="card-body text-center">
+            <h5 class="card-title text-info">Tarjeta Gráfica RTX 4070</h5>
+             <h4 class="text-danger">MXN $10,000.00</h4>
+             <a href="#" class="btn btn-primary w-100">Comprar</a>
+            </div>
+         </div>
+       </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/silla.png" class="img-placeholder" alt="Espacio para Silla Gamer">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Silla Gamer Ergonómica Pro</h5>
+          <h4 class="text-danger">MXN $2,220.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/contro.png" class="img-placeholder" alt="Espacio para Procesador">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Procesador AMD Ryzen 7 7800X3D</h5>
+          <h4 class="text-danger">MXN $6,220.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/placa.jpg" class="img-placeholder" alt="Espacio para Placa Base">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Placa Base MSI MAG B850 TOMAHAWK MAX WIFI</h5>
+          <h4 class="text-danger">MXN $5,000.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 mb-3">
+      <a href="componentes.html" class="btn btn-lg w-100 btn-primary">Ver Más</a>
+
+    </div>
+  </div>
+</div>
+
+<div class="tab-pane fade" id="accesorios" role="tabpanel" aria-labelledby="accesorios-tab">
+  <h3 class="text-warning mb-3">Accesorios Gamer</h3>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/jugue.jpg" class="img-placeholder" alt="Espacio para Figura coleccionable">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Nintendo Mario Silver Edition amiibo Figure (Super Mario Series)</h5>
+          <h4 class="text-danger">MXN $950.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/CONTROLLL.png" class="img-placeholder" alt="Espacio para Funda de control">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Control PS5 personalizado Spider-Man</h5>
+          <h4 class="text-danger">MXN $3,500.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/aua.jpg" class="img-placeholder" alt="Espacio para auriculares">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Arctis Pro Wireless</h5>
+          <h4 class="text-danger">MXN $5,500.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/mau.jpg" class="img-placeholder" alt="Espacio para mouse">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Mouse Inalámbrico Razer DeathAdder V3 Pro</h5>
+          <h4 class="text-danger">MXN $2,500.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  <br>
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/tecla.jpg" class="img-placeholder" alt="Espacio para Teclado">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">HONGLONG Teclado Gamer Ergonómico</h5>
+          <h4 class="text-danger">MXN $1,500.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/monit.png" class="img-placeholder" alt="Espacio para Monitor">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Monitor Gamer UltraGear 27''</h5>
+          <h4 class="text-danger">MXN $12,500.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/controoo.jpg" class="img-placeholder" alt="Espacio para Xbox">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Xbox Elite Wireless Controller Series 2</h5>
+          <h4 class="text-danger">MXN $2,550.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <img src="imagenes/luces.jpg" class="img-placeholder" alt="Espacio para Tiras de Luces LED">
+        <div class="card-body text-center">
+          <h5 class="card-title text-info">Tiras de Luces LED RGBIC Govee</h5>
+          <h4 class="text-danger">MXN $650.00</h4>
+          <a href="#" class="btn btn-primary w-100">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 mb-3">
+    <a href="accesorios.html" class="btn btn-lg w-100 btn-primary">Ver Más</a>
+
+    </div>
+  </div>
+</div>
+
+</div> 
+</section>
+
+
+        <hr class="border-secondary">
+
+        <section id="ofertas" class="py-5">
+            <h1 class="section-title text-center">🏷️ Ofertas y Promociones Exclusivas</h1>
+            
+            <div class="row mb-4 bg-dark p-3 rounded">
+                <div class="col-md-6">
+                    <label class="form-label text-light">Filtrar por Descuento:</label>
+                    <select class="form-select bg-secondary text-white">
+                        <option selected>Todos los Descuentos</option>
+                        <option>20% o más</option>
+                        <option>50% o más</option>
+                        <option>Liquidación (70%+)</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label text-light">Filtrar por Temporada:</label>
+                    <select class="form-select bg-secondary text-white">
+                        <option selected>Todas</option>
+                        <option>Ofertas de Verano</option>
+                        <option>Black Friday</option>
+                        <option>Navidad Gamer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-danger">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-5">-50% OFF</span>
+                        <img src="imagenes/kla.png" class="img-placeholder" alt="Espacio para Juego en Oferta">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-info">Marvel's Guardians of the Galaxy </h5>
+                            <p class="card-text small text-muted">Precio original: <del>MXN $600.00</del></p>
+                            <h3 class="text-success">MXN $300.00</h3>
+                            <a href="#" class="btn btn-primary w-100">¡Aprovechar Ahora!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-warning">
+                         <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2 fs-5">COMBO!</span>
+                        <img src="imagenes/D.jpg" class="img-placeholder" alt="Espacio para Combo Consola + Juego">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-info">Combo Consola PlayStation 5 Modelo Slim Digital + 2 Juegos</h5>
+                            <p class="card-text small text-muted">Ahorra MXN $999 al comprar el paquete.</p>
+                            <h3 class="text-success">MXN $12,500.00</h3>
+                            <a href="#" class="btn btn-primary w-100">Ver Combo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 border-danger">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-5">-20% OFF</span>
+                        <img src="imagenes/kirbi.png" class="img-placeholder" alt="Espacio para Juego en Oferta">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-info">Kirby and the Forgotten Land - Standard Edition </h5>
+                            <p class="card-text small text-muted">Precio original: <del>MXN $1,200.00</del></p>
+                            <h3 class="text-success">MXN $960.00</h3>
+                            <a href="#" class="btn btn-primary w-100">¡Aprovechar Ahora!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4">
+                  <div class="col-md-4 mb-3">
+                 <a href="ofertas.html" class="btn btn-lg w-100 btn-primary">Ver Más</a>
+                   </div>
+                 </div>
+            </div>
+        </section>
+
+        <hr class="border-secondary">
+
+        <section id="carrito" class="py-5">
+            <h1 class="section-title text-center">🛒 Carrito de Compras</h1>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="text-warning mb-3">Productos Agregados</h3>
+                    
+                    <div class="card mb-3 p-3 d-flex flex-row align-items-center">
+                        <img src="imagenes/nba2.png" alt="Espacio para Item en Carrito 1" style="width: 80px; height: 80px; object-fit: cover;" class="rounded me-3">
+                        <div class="flex-grow-1">
+                            <h5>NBA 2K25 (Digital)</h5>
+                            <p class="mb-0 small text-muted">Precio Unitario: MXN $1,400.00</p>
+                        </div>
+                        <div class="d-flex align-items-center me-4">
+                            <label class="me-2 small">Cantidad:</label>
+                            <input type="number" value="1" min="1" class="form-control form-control-sm bg-secondary text-white" style="width: 60px;">
+                        </div>
+                        <h5 class="text-danger me-4">MXN $1,400.00</h5>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-x-lg"></i></button>
+                    </div>
+
+                    <div class="card mb-3 p-3 d-flex flex-row align-items-center">
+                        <img src="imagenes/ga.png" alt="Espacio para Item en Carrito 2" style="width: 80px; height: 80px; object-fit: cover;" class="rounded me-3">
+                        <div class="flex-grow-1">
+                            <h5>Grand Theft Auto V (Fisico)</h5>
+                            <p class="mb-0 small text-muted">Precio Unitario: MXN $800.00</p>
+                        </div>
+                         <div class="d-flex align-items-center me-4">
+                            <label class="me-2 small">Cantidad:</label>
+                            <input type="number" value="2" min="1" class="form-control form-control-sm bg-secondary text-white" style="width: 60px;">
+                        </div>
+                        <h5 class="text-danger me-4">MXN $1,600.00</h5>
+                        <button class="btn btn-danger btn-sm"><i class="bi bi-x-lg"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card p-4 sticky-top" style="top: 80px;">
+                        <h4 class="text-warning">Resumen del Pedido</h4>
+                        <ul class="list-group list-group-flush bg-secondary">
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white">Subtotal:<span>MXN $1,400.00</span></li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white">Costo de Envío:<span>MXN $1,600.00</span></li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white fw-bold border-top border-warning">Total Final:<span>MXN $3,000.00</span></li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-lg mt-3">Proceder al Pago</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="py-5 mt-5" style="background-color: #000; color: #fff;">
+  <div class="container text-center">
+    <h2 class="text-warning mb-4">Creado por Nuestro Equipo</h2>
+    <p class="text-light mb-5">Con pasión por los videojuegos y la tecnología.</p>
+
+    <div class="row justify-content-center">
+      
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card bg-dark text-center border-0">
+          <div class="mx-auto mb-3" 
+               style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #ffc107; box-shadow: 0 0 15px rgba(255,193,7,0.6);">
+            <img src="imagenes/fb.jpg" alt="Miembro 1" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h5 class="text-warning">Jorge Rafid Medina Porras</h5>
+          <p class="text-muted">Desarrollador Frontend</p>
+        </div>
+      </div>
+
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card bg-dark text-center border-0">
+          <div class="mx-auto mb-3" 
+               style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #ffc107; box-shadow: 0 0 15px rgba(255,193,7,0.6);">
+            <img src="imagenes/WhatsApp Image 2025-11-03 at 9.28.00 PM.jpeg" alt="Miembro 2" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h5 class="text-warning">Rudy Daniel Navarrete Catzin</h5>
+          <p class="text-muted">Documentador</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card bg-dark text-center border-0">
+          <div class="mx-auto mb-3" 
+               style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #ffc107; box-shadow: 0 0 15px rgba(255,193,7,0.6);">
+            <img src="imagenes/WhatsApp Image 2025-11-03 at 9.23.51 PM.jpeg" alt="Miembro 3" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h5 class="text-warning">Miguel Moises Olivares Novelo</h5>
+          <p class="text-muted">Desarrollador Frontend</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer class="bg-dark text-white-50 mt-5 p-4 text-center">
+        <p>© 2025 Gamer Zone. Todos los derechos reservados.</p>    
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

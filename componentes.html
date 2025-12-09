@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes - Gamer Zone</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+
+    <style>
+        /* Estilos base para el fondo y tipografía */
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+        /* Estilos para el título de la sección */
+        .section-title {
+            color: #ff9800;
+            border-bottom: 2px solid #ff9800;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        /* Estilos de las tarjetas de producto */
+        .card {
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            color: #fff;
+            /* Transición para el efecto de desvanecimiento/realce (fade/lift) */
+            transition: transform 0.2s, box-shadow 0.2s; 
+        }
+        /* Efecto de desvanecimiento/realce al pasar el ratón */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* ============================================= */
+        /* MODIFICACIÓN CLAVE: IMAGENES GRANDES Y CUBRIENDO (Igual que en Consolas) */
+        /* ============================================= */
+        .card img {
+            height: 220px; /* Altura aumentada para verse más grande */
+            width: 100%;
+            object-fit: cover; /* Hace que la imagen ocupe todo el espacio (puede recortar) */
+            /* Se eliminan el padding y el background-color */
+        }
+
+        .btn-primary {
+            background-color: #ff5722;
+            border-color: #ff5722;
+        }
+        .btn-primary:hover {
+            background-color: #e64a19;
+            border-color: #e64a19;
+        }
+
+        /* Se mantiene el color blanco del tipo de componente (si no se usa la clase de Bootstrap) */
+        .comp-type {
+            color: #ffffff;
+        }
+        
+        /* ============================================= */
+        /* ESTILOS PARA LA ANIMACIÓN DE DESVANECIMIENTO (Fade-in on scroll) */
+        /* ============================================= */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alumnos-info container-fluid">
+        <div class="container">
+            <p>Proyecto de Diseño Web. Alumnos:</p>
+            <p>Jorge Rafid Medina Porras | Miguel Moises Olivares Novelo | Rudy Daniel Navarrete Catzin</p>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="inicio.html">🎮 Gamer Zone</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+                <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="carrito.html">
+                        <i class="bi bi-cart-fill"></i> Carrito
+                        <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </li> 
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="container py-5">
+
+    <h1 class="section-title text-center">🛠️ Componentes</h1>
+
+    <div class="row">
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/ryzen7800x3d.png" class="card-img-top" alt="Ryzen 7 7800X3D">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Ryzen 7 7800X3D</h5>
+                    <p class="small text-white">Procesador AMD</p>
+                    <p class="text-success fw-bold">Stock: 25</p>
+                    <h4 class="text-danger">$6,999</h4>
+                    <button onclick="agregarAlCarrito('Ryzen 7 7800X3D', 6999, 'imagenes/ryzen7800x3d.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/i7-14700k.png" class="card-img-top" alt="Intel Core i7-14700K">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Intel Core i7-14700K</h5>
+                    <p class="small text-white">Procesador Intel</p>
+                    <p class="text-success fw-bold">Stock: 18</p>
+                    <h4 class="text-danger">$8,499</h4>
+                    <button onclick="agregarAlCarrito('Intel Core i7-14700K', 8499, 'imagenes/i7-14700k.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/rtx4070super.png" class="card-img-top" alt="NVIDIA RTX 4070 Super">
+                <div class="card-body text-center">
+                    <h5 class="text-info">NVIDIA RTX 4070 Super</h5>
+                    <p class="small text-white">Tarjeta Gráfica</p>
+                    <p class="text-success fw-bold">Stock: 12</p>
+                    <h4 class="text-danger">$13,999</h4>
+                    <button onclick="agregarAlCarrito('NVIDIA RTX 4070 Super', 13999, 'imagenes/rtx4070super.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/rx7800xt.png" class="card-img-top" alt="AMD Radeon RX 7800 XT">
+                <div class="card-body text-center">
+                    <h5 class="text-info">AMD Radeon RX 7800 XT</h5>
+                    <p class="small text-white">Tarjeta Gráfica</p>
+                    <p class="text-success fw-bold">Stock: 20</p>
+                    <h4 class="text-danger">$10,800</h4>
+                    <button onclick="agregarAlCarrito('AMD Radeon RX 7800 XT', 10800, 'imagenes/rx7800xt.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/b650tomahawk.png" class="card-img-top" alt="MSI B650 Tomahawk WiFi">
+                <div class="card-body text-center">
+                    <h5 class="text-info">MSI B650 Tomahawk WiFi</h5>
+                    <p class="small text-white">Tarjeta Madre</p>
+                    <p class="text-success fw-bold">Stock: 30</p>
+                    <h4 class="text-danger">$4,299</h4>
+                    <button onclick="agregarAlCarrito('MSI B650 Tomahawk WiFi', 4299, 'imagenes/b650tomahawk.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/z790aorus.png" class="card-img-top" alt="Gigabyte Z790 Aorus Elite">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Gigabyte Z790 Aorus Elite</h5>
+                    <p class="small text-white">Tarjeta Madre</p>
+                    <p class="text-success fw-bold">Stock: 22</p>
+                    <h4 class="text-danger">$5,899</h4>
+                    <button onclick="agregarAlCarrito('Gigabyte Z790 Aorus Elite', 5899, 'imagenes/z790aorus.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/corsairddr5.png" class="card-img-top" alt="Corsair Vengeance DDR5 32GB">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Corsair Vengeance DDR5 32GB</h5>
+                    <p class="small text-white">Memoria RAM</p>
+                    <p class="text-success fw-bold">Stock: 40</p>
+                    <h4 class="text-danger">$2,499</h4>
+                    <button onclick="agregarAlCarrito('Corsair Vengeance DDR5 32GB', 2499, 'imagenes/corsairddr5.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/kingston2tb.png" class="card-img-top" alt="Kingston NV2 2TB M.2 SSD">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Kingston NV2 2TB M.2 SSD</h5>
+                    <p class="small text-white">Unidad SSD</p>
+                    <p class="text-success fw-bold">Stock: 55</p>
+                    <h4 class="text-danger">$1,699</h4>
+                    <button onclick="agregarAlCarrito('Kingston NV2 2TB M.2 SSD', 1699, 'imagenes/kingston2tb.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/coolermasterpsu.png" class="card-img-top" alt="Cooler Master 750W Gold">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Cooler Master 750W Gold</h5>
+                    <p class="small text-white">Fuente de Poder</p>
+                    <p class="text-success fw-bold">Stock: 34</p>
+                    <h4 class="text-danger">$2,299</h4>
+                    <button onclick="agregarAlCarrito('Cooler Master 750W Gold', 2299, 'imagenes/coolermasterpsu.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/nhd15black.png" class="card-img-top" alt="Noctua NH-D15 Chromax Black">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Noctua NH-D15 Chromax Black</h5>
+                    <p class="small text-white">Enfriamiento por aire</p>
+                    <p class="text-success fw-bold">Stock: 15</p>
+                    <h4 class="text-danger">$2,899</h4>
+                    <button onclick="agregarAlCarrito('Noctua NH-D15 Chromax Black', 2899, 'imagenes/nhd15black.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/samsung990pro.png" class="card-img-top" alt="Samsung 990 PRO 1TB">
+                <div class="card-body text-center">
+                    <h5 class="text-info">Samsung 990 PRO 1TB</h5>
+                    <p class="small text-white">SSD NVMe Gen4</p>
+                    <p class="text-success fw-bold">Stock: 45</p>
+                    <h4 class="text-danger">$2,799</h4>
+                    <button onclick="agregarAlCarrito('Samsung 990 PRO 1TB', 2799, 'imagenes/samsung990pro.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 animate-on-scroll">
+            <div class="card h-100">
+                <img src="imagenes/nzxth7flow.png" class="card-img-top" alt="NZXT H7 Flow">
+                <div class="card-body text-center">
+                    <h5 class="text-info">NZXT H7 Flow</h5>
+                    <p class="small text-white">Gabinete Gamer</p>
+                    <p class="text-success fw-bold">Stock: 16</p>
+                    <h4 class="text-danger">$3,299</h4>
+                    <button onclick="agregarAlCarrito('NZXT H7 Flow', 3299, 'imagenes/nzxth7flow.png')" class="btn btn-primary w-100">Comprar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 text-center mt-3 mb-5">
+            <a href="productos.html" class="btn btn-lg w-50 btn-primary"><i class="bi bi-arrow-left-circle me-2"></i> Volver al Catálogo Principal</a>
+        </div>
+
+
+    </div></div><footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>🎮 Gamer Zone</h5>
+                    <p>La mejor tienda online de videojuegos y accesorios.</p>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Calle Principal #123, Ciudad Gamer</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="productos.html" class="text-white text-decoration-none">Catálogo Completo</a></li>
+                        <li><a href="ofertas.html" class="text-white text-decoration-none">Ver Ofertas</a></li>
+                        <li><a href="noticias.html" class="text-white text-decoration-none">Últimas Noticias</a></li>
+                        <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                        <li><a href="login.html" class="text-white text-decoration-none">Mi Cuenta</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center pt-3 border-top border-light opacity-50">
+                    <p class="mb-0">&copy; 2025 Gamer Zone. Todos los derechos reservados. | Proyecto de Diseño Web.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Función para verificar qué elementos son visibles en la ventana
+        function checkVisibility() {
+            // Seleccionamos todos los elementos con la clase 'animate-on-scroll'
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                // Obtenemos la posición del elemento en relación con la ventana
+                const rect = element.getBoundingClientRect();
+                
+                // Verificamos si la parte superior del elemento está visible en la ventana,
+                // usando un umbral de 100px para que se active antes de llegar al borde inferior.
+                if (rect.top < window.innerHeight - 100) {
+                    // Si es visible, le añadimos la clase que dispara la animación (opacidad a 1 y subida)
+                    element.classList.add('is-visible');
+                }
+            });
+        }
+
+        // 1. Ejecutamos la función al cargar la página para animar los elementos que son visibles de inmediato.
+        window.addEventListener('load', checkVisibility);
+        
+        // 2. Ejecutamos la función cada vez que el usuario hace scroll.
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+    
+    <script>
+        const CART_KEY = 'carrito';
+        const STOCK_KEY = 'stockInventario';
+
+        // Función base para inicializar stock (copiada de carrito.html)
+        function inicializarStock() {
+            let stock = localStorage.getItem(STOCK_KEY);
+            if (!stock) {
+                const masterStock = {
+                    'Cyberpunk 2077': 999, 'NBA 2K25': 999, 'DOOM: The Dark Ages': 999, 'God of War: Ragnarök': 999, 'Marvel 1943': 999, 'Super Mario Bros Wonder': 999, 'Spider-Man 2': 999, 'Death Stranding 2': 999, 'Elden Ring (Digital)': 999, 'Grand Theft Auto VI': 999, 'Hogwarts Legacy': 999, 'The Last of Us Parte I': 999, 'Resident Evil 4 Remake': 999, 'Fortnite (Paquete Premium)': 999, 'Call of Duty Modern Warfare III': 999, 'Mortal Kombat 1': 999,
+                    'Super Smash Bros Ultimate': 45, 'Elden Ring': 70, 'The Last of Us Part II Remastered': 50, 'Metroid Dread': 28, 'Forza Horizon 5': 60, 'Splatoon 3': 40, 'Star Wars Jedi: Survivor': 34, 'Pokémon Scarlet': 56, 'Assassin\'s Creed Mirage': 39, 'Sonic Frontiers': 48, 'Dragon Ball Z: Kakarot': 42, 'Luigi’s Mansion 3': 37,
+                    'Marvel\'s Guardians of the Galaxy': 50, 'Kirby and the Forgotten Land - Standard Edition': 15, 'Horizon Forbidden West': 30, 'God of War Ragnarök (Oferta)': 40, 'Combo Consola PlayStation 5': 10, 'Nintendo Switch OLED + Mario Kart 8': 10, 'Forza Horizon 5 Deluxe': 25, 'Razer Huntsman Mini': 18, 'HyperX Cloud Alpha': 22, 'Logitech G502 HERO': 30, 'Nanoleaf RGB Triangles Pack': 15, 'Resident Evil 4 Remake – Deluxe Edition': 25,
+                    'PlayStation Portal': 35, 'ROG Ally X': 28, 'Atari VCS 2025': 18, 'SEGA Mega Drive Mini 2': 22, 'Analogue Pocket': 32, 'Evercade EXP': 27, 'Playdate': 14, 'Logitech G Cloud': 19, 'Ayn Odin 2': 26, 'Retroid Pocket 4 Pro': 30,
+                    'Ryzen 7 7800X3D': 25, 'Intel Core i7-14700K': 18, 'NVIDIA RTX 4070 Super': 12, 'AMD Radeon RX 7800 XT': 20, 'MSI B650 Tomahawk WiFi': 30, 'Gigabyte Z790 Aorus Elite': 22, 'Corsair Vengeance DDR5 32GB': 40, 'Kingston NV2 2TB M.2 SSD': 55, 'Cooler Master 750W Gold': 34, 'Noctua NH-D15 Chromax Black': 15, 'Samsung 990 PRO 1TB': 45, 'NZXT H7 Flow': 16,
+                    'Arctis Nova Pro Wireless': 20, 'Logitech G Pro X Superlight 2': 35, 'Razer Huntsman V3 Pro': 18, 'ASUS ROG Throne Qi': 18, 'Razer Seiren Mini': 35, 'Logitech Litra Glow': 20, 'Razer Firefly V2': 25, 'Xbox Elite Series 2 Core': 30, 'PS5 Media Remote': 28, 'DualSense Charging Station': 22, 'HyperX Wrist Rest': 45, 'Elgato Stream Deck MK2': 25,
+                    'Cyberpunk 2077 (Muestra)': 999, 'NBA 2K25 (Muestra)': 999, 'DOOM: The Dark Ages (Muestra)': 999, 'God of War: Ragnarök (Muestra)': 999, 'Marvel 1943: Rise of Hydra (Muestra)': 999, 'Super Mario Bros. Wonder (Muestra)': 999, 'Marvel\'s Spider-Man 2 (Muestra)': 999, 'Death Stranding 2: On the Beach (Muestra)': 999,
+                    'Mario Kart 8 Deluxe (Muestra)': 20, 'WWE 2K25 (Muestra)': 3, 'Grand Theft Auto V (Muestra)': 100, 'Minecraft (Muestra)': 300, 'Red Dead Redemption 2 (Muestra)': 78, 'Madden NFL 25 (Muestra)': 63, 'Animal Crossing: New Horizons (Muestra)': 80, 'Call of Duty: Black Ops 6 (Muestra)': 2,
+                    'PlayStation 5 (E. Estándar Muestra)': 10, 'Xbox Series X (Muestra)': 7, 'Nintendo Switch (OLED Muestra)': 15, 'Xbox Series S (Muestra)': 12, 'Nintendo Switch Lite (Muestra)': 8, 'PlayStation 5 Pro (Muestra)': 5,
+                    'Tarjeta Gráfica RTX 4070 (Muestra)': 10, 'Silla Gamer Ergonómica Pro (Muestra)': 20, 'Procesador AMD Ryzen 7 7800X3D (Muestra)': 15, 'Placa Base MSI MAG B850 (Muestra)': 12,
+                    'Nintendo Mario Silver Edition (Muestra)': 50, 'Control PS5 Spider-Man (Muestra)': 5, 'Arctis Pro Wireless (Muestra)': 10, 'Mouse Razer DeathAdder V3 (Muestra)': 15, 'Teclado HONGLONG (Muestra)': 20, 'Monitor UltraGear 27\'\' (Muestra)': 8, 'Xbox Elite Wireless (Muestra)': 12, 'Luces LED Govee (Muestra)': 30,
+                };
+                localStorage.setItem(STOCK_KEY, JSON.stringify(masterStock));
+            }
+        }
+        
+        function agregarAlCarrito(nombre, precio, imagen, idProducto) {
+            inicializarStock();
+
+            let carrito = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+            let stockInventario = JSON.parse(localStorage.getItem(STOCK_KEY));
+            
+            const key = idProducto || nombre;
+
+            let productoExistente = carrito.find(p => p.nombre === nombre);
+
+            const stockDisponible = stockInventario[key] || 0;
+            const cantidadActualEnCarrito = productoExistente ? productoExistente.cantidad : 0;
+            
+            if (stockDisponible <= cantidadActualEnCarrito) {
+                alert(`❌ Lo sentimos, ¡${nombre} está agotado o ya tienes el máximo stock disponible (${stockDisponible}) en tu carrito!`);
+                return;
+            }
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({ nombre, precio, imagen, cantidad: 1, key: key });
+            }
+
+            localStorage.setItem(CART_KEY, JSON.stringify(carrito));
+            
+            actualizarBadge();
+            
+            alert(`✅ ¡${nombre} agregado al carrito!`);
+        }
+
+        function actualizarBadge() {
+            let carrito = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+            const badge = document.getElementById('cart-badge');
+            if (badge) {
+                let totalItems = carrito.reduce((total, prod) => total + prod.cantidad, 0);
+                badge.innerText = totalItems;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', actualizarBadge);
+    </script>
+</body>
+</html>

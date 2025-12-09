@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas - Gamer Zone</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+
+<style>
+    /* Estilos del Footer */
+    .footer {
+        background-color: #121212;
+        color: #ddd;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        border-top: 2px solid #333; 
+    }
+    .footer h5 {
+        color: #ffffff; 
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .footer a:hover {
+        color: #e0e0e0 !important; 
+    }
+    /* FIN Estilos del Footer */
+
+    .body {
+        background-color: #1a1a1a;
+        color: #fff;
+    }
+    
+    .navbar-brand, .nav-link {
+        color: #ffffff !important;
+        font-weight: bold;
+    }
+    
+    .alumnos-info {
+        background-color: #000;
+        color: #ddd;
+        font-size: 0.8rem;
+        padding: 5px 0;
+    }
+
+
+    .section-title {
+        color: #ff9800;
+        border-bottom: 2px solid #ff9800;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    /* Estilos generales de tarjetas */
+    .card {
+        background-color: #2c2c2c;
+        border: 1px solid #444;
+        position: relative;
+    }
+
+    .card img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Estilos específicos para el Carrusel de Ofertas */
+    .carousel-item img {
+        height: 400px; 
+        object-fit: cover;
+        opacity: 0.5;
+    }
+
+    /* Posición del texto más abajo */
+    .carousel-caption {
+        bottom: 50px; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    .carousel-caption h5 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ff9800;
+    }
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+    /* Fin Estilos Carrusel */
+
+
+    .btn-primary {
+        background-color: #ff5722;
+        border-color: #ff5722;
+    }
+    
+    .text-info {
+        color: #2196f3 !important; 
+    }
+    
+    .text-warning {
+        color: #ffc107 !important;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="alumnos-info container-fluid">
+    <div class="container">
+        <p>Proyecto de Diseño Web. Alumnos:</p>
+        <p>Jorge Rafid Medina Porras | Miguel Moises Olivares Novelo | Rudy Daniel Navarrete Catzin</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="inicio.html">🎮 Gamer Zone</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li> 
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="ofertas.html">Ofertas</a></li> 
+                <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li> 
+                <li class="nav-item me-2">
+                    <a class="nav-link position-relative" href="carrito.html">
+                        <i class="bi bi-cart-fill"></i> Carrito
+                        <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-5">
+<section id="ofertas-exclusivas" class="py-5 pt-0 animate-on-scroll">
+        <div id="ofertasCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#ofertasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#ofertasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#ofertasCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            
+            <div class="carousel-inner rounded border border-warning">
+                <div class="carousel-item active bg-dark">
+                    <img src="imagenes/kla.png" class="d-block w-100" alt="Oferta 1: Marvel's Guardians of the Galaxy">
+                    <div class="carousel-caption d-none d-md-block text-center">
+                        <h5>💥 ¡OFERTA IMPERDIBLE DE LA SEMANA! 💥</h5>
+                        <p>Marvel's Guardians of the Galaxy con un increíble **-50% de DESCUENTO**.</p>
+                        <h3 class="text-success">Solo MXN $300.00</h3>
+                        <a href="#" onclick="agregarAlCarrito('Marvel\'s Guardians of the Galaxy', 300, 'imagenes/kla.png')" class="btn btn-lg btn-primary mt-3">¡COMPRAR AHORA!</a>
+                    </div>
+                </div>
+                <div class="carousel-item bg-dark">
+                    <img src="imagenes/gowragnarok.png" class="d-block w-100" alt="Oferta 2: God of War Ragnarök">
+                    <div class="carousel-caption d-none d-md-block text-center">
+                        <h5>⚔️ LA MEJOR AVENTURA EN LIQUIDACIÓN ⚔️</h5>
+                        <p>God of War Ragnarök con un descomunal **-55% OFF**.</p>
+                        <h3 class="text-success">Llévatelo por solo $720 MXN</h3>
+                        <a href="#" onclick="agregarAlCarrito('God of War Ragnarök (Oferta)', 720, 'imagenes/gowragnarok.png')" class="btn btn-lg btn-primary mt-3">¡Comprar Ahora!</a>
+                    </div>
+                </div>
+                <div class="carousel-item bg-dark">
+                    <img src="imagenes/D.jpg" class="d-block w-100" alt="Oferta 3: Combo Consola PlayStation 5">
+                    <div class="carousel-caption d-none d-md-block text-center">
+                        <h5>⭐ COMBO ESTELAR: CONSOLA PS5 ⭐</h5>
+                        <p>PS5 Slim Digital + 2 Juegos. **Ahorra casi $1,000 MXN**.</p>
+                        <h3 class="text-success">Por $12,500.00 MXN</h3>
+                        <a href="#" onclick="agregarAlCarrito('Combo Consola PlayStation 5', 12500, 'imagenes/D.jpg')" class="btn btn-lg btn-primary mt-3">¡COMPRAR COMBO!</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#ofertasCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#ofertasCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        <h1 class="section-title text-center animate-on-scroll">🏷️ Productos Destacados en Oferta</h1>
+        
+        <div class="row animate-on-scroll">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-danger">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-5">-50% OFF</span>
+                    <img src="imagenes/kla.png" class="img-placeholder" alt="Marvel's Guardians of the Galaxy">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-info">Marvel's Guardians of the Galaxy </h5>
+                        <p class="card-text small text-muted">Precio original: <del>MXN $600.00</del></p>
+                        <h3 class="text-success">MXN $300.00</h3>
+                        <a href="#" onclick="agregarAlCarrito('Marvel\'s Guardians of the Galaxy', 300, 'imagenes/kla.png')" class="btn btn-primary w-100">¡Aprovechar Ahora!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-warning">
+                    <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-2 fs-5">COMBO!</span>
+                    <img src="imagenes/D.jpg" class="img-placeholder" alt="Combo Consola PlayStation 5">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-info">Combo Consola PlayStation 5 Modelo Slim Digital + 2 Juegos</h5>
+                        <p class="card-text small text-muted">Ahorra MXN $999 al comprar el paquete.</p>
+                        <h3 class="text-success">MXN $12,500.00</h3>
+                        <a href="#" onclick="agregarAlCarrito('Combo Consola PlayStation 5', 12500, 'imagenes/D.jpg')" class="btn btn-primary w-100">Comprar Combo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-danger">
+                    <span class="badge bg-danger position-absolute top-0 start-0 m-2 fs-5">-20% OFF</span>
+                    <img src="imagenes/kirbi.png" class="img-placeholder" alt="Kirby and the Forgotten Land">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-info">Kirby and the Forgotten Land - Standard Edition </h5>
+                        <p class="card-text small text-muted">Precio original: <del>MXN $1,200.00</del></p>
+                        <h3 class="text-success">MXN $960.00</h3>
+                        <a href="#" onclick="agregarAlCarrito('Kirby and the Forgotten Land - Standard Edition', 960, 'imagenes/kirbi.png')" class="btn btn-primary w-100">¡Aprovechar Ahora!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="border-light my-5">
+
+    <h2 class="section-title text-center mb-4 animate-on-scroll">🔥 Liquidación de Inventario</h2>
+
+    <div class="row animate-on-scroll">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/horizonfw.png" class="card-img-top" alt="Horizon Forbidden West">
+                <div class="discount-badge">-40% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Horizon Forbidden West</h5>
+                    <p class="price-before">Antes: <del>$1,499</del></p>
+                    <p class="price-final">$899</p>
+                    <button onclick="agregarAlCarrito('Horizon Forbidden West', 899, 'imagenes/horizonfw.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/gowragnarok.png" class="card-img-top" alt="God of War Ragnarök">
+                <div class="discount-badge">-55% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">God of War Ragnarök</h5>
+                    <p class="price-before">Antes: <del>$1,600</del></p>
+                    <p class="price-final">$720</p>
+                    <button onclick="agregarAlCarrito('God of War Ragnarök (Oferta)', 720, 'imagenes/gowragnarok.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/switchcombo.png" class="card-img-top" alt="Nintendo Switch OLED + Mario Kart 8">
+                <div class="discount-badge">COMBO ESPECIAL</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Switch OLED + Mario Kart 8</h5>
+                    <p class="price-before">Ahorras: $1,200 MXN</p>
+                    <p class="price-final">$8,499</p>
+                    <button onclick="agregarAlCarrito('Nintendo Switch OLED + Mario Kart 8', 8499, 'imagenes/switchcombo.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/forza5.png" class="card-img-top" alt="Forza Horizon 5 Deluxe">
+                <div class="discount-badge">-35% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Forza Horizon 5 Deluxe</h5>
+                    <p class="price-before">Antes: <del>$1,200</del></p>
+                    <p class="price-final">$780</p>
+                    <button onclick="agregarAlCarrito('Forza Horizon 5 Deluxe', 780, 'imagenes/forza5.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/huntsmanmini.png" class="card-img-top" alt="Razer Huntsman Mini">
+                <div class="discount-badge">-30% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Razer Huntsman Mini</h5>
+                    <p class="price-before">Antes: <del>$2,499</del></p>
+                    <p class="price-final">$1,749</p>
+                    <button onclick="agregarAlCarrito('Razer Huntsman Mini', 1749, 'imagenes/huntsmanmini.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/cloudalpha.png" class="card-img-top" alt="HyperX Cloud Alpha">
+                <div class="discount-badge">-25% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">HyperX Cloud Alpha</h5>
+                    <p class="price-before">Antes: <del>$1,999</del></p>
+                    <p class="price-final">$1,499</p>
+                    <button onclick="agregarAlCarrito('HyperX Cloud Alpha', 1499, 'imagenes/cloudalpha.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/g502.png" class="card-img-top" alt="Logitech G502 HERO">
+                <div class="discount-badge">-50% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Logitech G502 HERO</h5>
+                    <p class="price-before">Antes: <del>$1,199</del></p>
+                    <p class="price-final">$599</p>
+                    <button onclick="agregarAlCarrito('Logitech G502 HERO', 599, 'imagenes/g502.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/nanoleaftriangles.png" class="card-img-top" alt="Nanoleaf RGB Triangles Pack">
+                <div class="discount-badge">PROMO!</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Nanoleaf RGB Triangles Pack</h5>
+                    <p class="price-before">Ahorras: $900 MXN</p>
+                    <p class="price-final">$3,499</p>
+                    <button onclick="agregarAlCarrito('Nanoleaf RGB Triangles Pack', 3499, 'imagenes/nanoleaftriangles.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card liquidacion-card h-100">
+                <img src="imagenes/re4remake.png" class="card-img-top" alt="Resident Evil 4 Remake – Deluxe Edition">
+                <div class="discount-badge">-45% OFF</div>
+                <div class="card-body p-3">
+                    <h5 class="text-warning mb-1">Resident Evil 4 Remake – Deluxe Edition</h5>
+                    <p class="price-before">Antes: <del>$1,799</del></p>
+                    <p class="price-final">$989</p>
+                    <button onclick="agregarAlCarrito('Resident Evil 4 Remake – Deluxe Edition', 989, 'imagenes/re4remake.png')" class="btn btn-primary w-100 mt-2">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+<footer class="footer mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>🎮 Gamer Zone</h5>
+                <p>La mejor tienda online de videojuegos y accesorios.</p>
+                <p><i class="bi bi-geo-alt-fill me-2"></i> Calle Principal #123, Ciudad Gamer</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Enlaces Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="productos.html" class="text-white text-decoration-none">Catálogo Completo</a></li>
+                    <li><a href="ofertas.html" class="text-white text-decoration-none">Ver Ofertas</a></li>
+                    <li><a href="noticias.html" class="text-white text-decoration-none">Últimas Noticias</a></li>
+                    <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                    <li><a href="login.html" class="text-white text-decoration-none">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Síguenos</h5>
+                <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center pt-3 border-top border-light opacity-50">
+                <p class="mb-0">&copy; 2025 Gamer Zone. Todos los derechos reservados. | Proyecto de Diseño Web.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/sesion.js"></script>
+<script>
+    // Función para verificar qué elementos son visibles en la ventana
+    function checkVisibility() {
+        // Seleccionamos todos los elementos que queremos animar
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        
+        elements.forEach(element => {
+            // Obtenemos la posición del elemento
+            const rect = element.getBoundingClientRect();
+            
+            // Verificamos si la parte superior del elemento es visible
+            if (rect.top < window.innerHeight - 150) {
+                element.classList.add('is-visible');
+            } 
+        });
+    }
+
+    // 1. Ejecutamos la función al cargar la página para animar los elementos que son visibles de inmediato.
+    window.addEventListener('load', checkVisibility);
+    
+    // 2. Ejecutamos la función cada vez que el usuario hace scroll.
+    window.addEventListener('scroll', checkVisibility);
+</script>
+
+<script>
+    const CART_KEY = 'carrito';
+    const STOCK_KEY = 'stockInventario';
+
+    // 1. Inicializa el stock en localStorage si no existe.
+    function inicializarStock() {
+        let stock = localStorage.getItem(STOCK_KEY);
+        if (!stock) {
+            // Inventario maestro con cantidades iniciales
+            const masterStock = {
+                'Cyberpunk 2077': 999, 'NBA 2K25': 999, 'DOOM: The Dark Ages': 999, 'God of War: Ragnarök': 999, 'Marvel 1943': 999, 'Super Mario Bros Wonder': 999, 'Spider-Man 2': 999, 'Death Stranding 2': 999, 'Elden Ring (Digital)': 999, 'Grand Theft Auto VI': 999, 'Hogwarts Legacy': 999, 'The Last of Us Parte I': 999, 'Resident Evil 4 Remake': 999, 'Fortnite (Paquete Premium)': 999, 'Call of Duty Modern Warfare III': 999, 'Mortal Kombat 1': 999,
+                'Super Smash Bros Ultimate': 45, 'Elden Ring': 70, 'The Last of Us Part II Remastered': 50, 'Metroid Dread': 28, 'Forza Horizon 5': 60, 'Splatoon 3': 40, 'Star Wars Jedi: Survivor': 34, 'Pokémon Scarlet': 56, 'Assassin\'s Creed Mirage': 39, 'Sonic Frontiers': 48, 'Dragon Ball Z: Kakarot': 42, 'Luigi’s Mansion 3': 37,
+                // Stock de Ofertas
+                'Marvel\'s Guardians of the Galaxy': 50, 'Kirby and the Forgotten Land - Standard Edition': 15, 'Horizon Forbidden West': 30, 'God of War Ragnarök (Oferta)': 40, 'Combo Consola PlayStation 5': 10, 'Nintendo Switch OLED + Mario Kart 8': 10, 'Forza Horizon 5 Deluxe': 25, 'Razer Huntsman Mini': 18, 'HyperX Cloud Alpha': 22, 'Logitech G502 HERO': 30, 'Nanoleaf RGB Triangles Pack': 15, 'Resident Evil 4 Remake – Deluxe Edition': 25,
+                // Stock de Consolas
+                'PlayStation Portal': 35, 'ROG Ally X': 28, 'Atari VCS 2025': 18, 'SEGA Mega Drive Mini 2': 22, 'Analogue Pocket': 32, 'Evercade EXP': 27, 'Playdate': 14, 'Logitech G Cloud': 19, 'Ayn Odin 2': 26, 'Retroid Pocket 4 Pro': 30,
+                // Stock de Componentes
+                'Ryzen 7 7800X3D': 25, 'Intel Core i7-14700K': 18, 'NVIDIA RTX 4070 Super': 12, 'AMD Radeon RX 7800 XT': 20, 'MSI B650 Tomahawk WiFi': 30, 'Gigabyte Z790 Aorus Elite': 22, 'Corsair Vengeance DDR5 32GB': 40, 'Kingston NV2 2TB M.2 SSD': 55, 'Cooler Master 750W Gold': 34, 'Noctua NH-D15 Chromax Black': 15, 'Samsung 990 PRO 1TB': 45, 'NZXT H7 Flow': 16,
+                // Stock de Accesorios
+                'Arctis Nova Pro Wireless': 20, 'Logitech G Pro X Superlight 2': 35, 'Razer Huntsman V3 Pro': 18, 'ASUS ROG Throne Qi': 18, 'Razer Seiren Mini': 35, 'Logitech Litra Glow': 20, 'Razer Firefly V2': 25, 'Xbox Elite Series 2 Core': 30, 'PS5 Media Remote': 28, 'DualSense Charging Station': 22, 'HyperX Wrist Rest': 45, 'Elgato Stream Deck MK2': 25,
+            };
+            localStorage.setItem(STOCK_KEY, JSON.stringify(masterStock));
+        }
+    }
+
+    // 2. Agrega productos al carrito, verificando el stock.
+    function agregarAlCarrito(nombre, precio, imagen) {
+        inicializarStock();
+
+        let carrito = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        let stockInventario = JSON.parse(localStorage.getItem(STOCK_KEY));
+        
+        const key = nombre; // Usamos el nombre como clave única para el stock
+        let productoExistente = carrito.find(p => p.nombre === nombre);
+
+        const stockDisponible = stockInventario[key] || 0;
+        const cantidadActualEnCarrito = productoExistente ? productoExistente.cantidad : 0;
+        
+        if (stockDisponible <= cantidadActualEnCarrito) {
+            alert(`❌ Lo sentimos, ¡${nombre} está agotado o ya tienes el máximo stock disponible (${stockDisponible}) en tu carrito!`);
+            return;
+        }
+
+        if (productoExistente) {
+            productoExistente.cantidad += 1;
+        } else {
+            // Guardamos el precio y la imagen para mostrarlos en el carrito.html
+            carrito.push({ nombre, precio, imagen, cantidad: 1, key: key });
+        }
+
+        localStorage.setItem(CART_KEY, JSON.stringify(carrito));
+        
+        actualizarBadge();
+        
+        alert(`✅ ¡${nombre} agregado al carrito!`);
+    }
+
+    // 3. Actualiza el contador del carrito en la barra de navegación.
+    function actualizarBadge() {
+        let carrito = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        const badge = document.getElementById('cart-badge');
+        if (badge) {
+            let totalItems = carrito.reduce((total, prod) => total + prod.cantidad, 0);
+            badge.innerText = totalItems;
+        }
+    }
+    
+    // Ejecutar al cargar la página
+    document.addEventListener('DOMContentLoaded', actualizarBadge);
+</script>
+</body>
+</html>

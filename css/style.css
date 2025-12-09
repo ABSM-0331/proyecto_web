@@ -1,0 +1,347 @@
+/* style.css (Estilos Profesionales - Inspirado en Epic Games y Corregido) */
+
+html, body {
+  overflow-x: hidden; 
+  width: 100%; 
+}
+body {
+    background-color: #1a1a1a; 
+    color: #f0f0f0;
+}
+
+/* Información de Alumnos: Disimulado y Profesional */
+.alumnos-info {
+    background-color: #1a1a1a; /* Fondo muy oscuro, apenas visible */
+    color: #888888; /* Color de texto gris suave */
+    font-size: 0.75rem; /* Letra pequeña */
+    padding: 5px 0;
+    text-align: center;
+    border-bottom: 1px solid #2a2a2a;
+    display: block; 
+    line-height: 1.2;
+    position: relative; 
+    z-index: 100;
+}
+.alumnos-info p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de barra de navegación: Más oscura y minimalista */
+.navbar {
+    background-color: #121212 !important; /* Fondo negro profundo */
+    border-bottom: 1px solid #2a2a2a;
+    padding: 0.8rem 0; 
+    z-index: 1000; 
+}
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: #ff9800 !important; /* Color de acento naranja/amarillo del usuario */
+}
+
+/* Estilo del botón de acción principal (Iniciar Sesión) */
+#btn-login {
+    background-color: #3f51b5 !important; 
+    border-color: #3f51b5 !important;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    padding: 6px 15px; 
+    border-radius: 4px;
+}
+#btn-login:hover {
+    background-color: #5c6bc0 !important;
+    border-color: #5c6bc0 !important;
+}
+
+.section-title {
+    color: #ff9800; 
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 10px;
+    margin-top: 50px; 
+    margin-bottom: 30px;
+}
+
+/* Estilos para el contenido principal (Carrusel) */
+#carruselBannerPrincipal {
+    width: 100%; 
+    margin: 0 auto;
+}
+.carousel-banner-img {
+    object-fit: cover;
+    height: 70vh; 
+    min-height: 450px;
+    width: 100%;
+}
+.carousel-caption {
+    left: 0; 
+    right: 0;
+    bottom: 0; 
+    top: auto; 
+    text-align: left;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    padding: 50px 70px 30px 70px;
+    border-radius: 0;
+    width: 100%; 
+}
+.carousel-caption h5 {
+    font-size: 2.2em; 
+    font-weight: 700;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 5px;
+}
+.carousel-caption p {
+    font-size: 1.1em;
+}
+
+/* Cartas de productos con efecto profesional (Bloque Destacados) */
+.card {
+    background-color: #2c2c2c;
+    border: 1px solid #444444;
+    color: #f0f0f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 10px #ff9800;
+}
+.img-placeholder {
+    background-color: #3a3a3a;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #777;
+}
+
+/* Botones con el color de acento del usuario */
+.btn-primary {
+    background-color: #ff5722; 
+    border-color: #ff5722;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.btn-primary:hover {
+    background-color: #e64a19;
+    border-color: #e64a19;
+}
+.footer {
+    background-color: #121212; 
+    color: white;
+    padding: 40px 0;
+    border-top: 1px solid #2a2a2a;
+}
+
+/* --- ANIMACIÓN: SCROLL REVEAL --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    opacity: 1;
+}
+
+/* ============================================= */
+/* Estilos específicos para la sección Liquidación de Inventario (¡AHORA SÍ FUNCIONAN!) */
+/* ============================================= */
+.liquidacion-card {
+    background-color: #1a1a1a; /* Fondo muy oscuro, como el body */
+    border: 2px solid #ff9800; /* Borde naranja/amarillo para destacar */
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.liquidacion-card:hover {
+    transform: translateY(-5px); 
+}
+
+.liquidacion-card .card-img-top {
+    height: 120px; 
+    object-fit: contain; 
+    background-color: #2c2c2c; /* Fondo gris oscuro para la imagen */
+    border-bottom: 1px solid #444;
+    padding: 10px;
+}
+
+/* ==== ESTILO EPIC GAMES PARA LIQUIDACIÓN ==== */
+.liquidacion-card {
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid #333;
+}
+
+.liquidacion-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.liquidacion-card img {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #00aaff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.price-before {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.price-final {
+    color: #ff9800;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.liquidacion-card h5 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.liquidacion-card button {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 8px;
+}
+/* Estilos para el efecto inicial (oculto) y la transición */
+.animate-on-scroll {
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(30px); /* Empieza 30px abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición suave */
+}
+
+/* Estilos cuando el elemento se hace visible (la clase que añade el JS) */
+.animate-on-scroll.is-visible {
+    opacity: 1; /* Se vuelve totalmente visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+/* ============================================= */
+/* Estilos Específicos para Carrito de Compras */
+/* ============================================= */
+
+/* Estilos para el título de la sección (reutilizable) */
+.section-title {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Estilo para las tarjetas de producto en el carrito */
+#cart-content .card {
+    background-color: #121212 !important; 
+    border: 1px solid #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+/* Asegura que los items de la lista de resumen sean transparentes para el fondo oscuro */
+#cart-content .list-group-item {
+    background-color: transparent !important; 
+}
+
+
+/* ============================================= */
+/* EFECTO DE CARRITO ANIMADO (Carga) */
+/* ============================================= */
+.animated-cart-container {
+    position: relative;
+    /* Asegura que el contenedor tenga el tamaño del ícono grande (8rem = 8 veces el tamaño de fuente) */
+    width: 8rem; 
+    height: 8rem;
+}
+
+.animated-cart-container i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* El ícono de rayo que parpadea y simula la actividad */
+/* ============================================= */
+/* EFECTO DE CARRITO LIMPIO (Vibración Sutil) */
+/* ============================================= */
+
+/* Contenedor del ícono para centrarlo */
+.animated-cart-container {
+    /* Quitamos el position: relative y el width/height fijos */
+    display: inline-block; 
+    /* El tamaño ya se define en el HTML con font-size: 8rem; */
+}
+
+/* El ícono principal del carrito */
+.animated-cart-container .bi-cart-fill {
+    font-size: 8rem; /* Tamaño grande y limpio */
+    color: #ff9800; /* Color naranja de la marca */
+    animation: pulse-cart 1.5s infinite alternate; /* Animación de pulsación sutil */
+}
+
+@keyframes pulse-cart {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.05); /* Ligeramente más grande */
+        opacity: 1;
+    }
+}
+
+
+/* Estilos para el texto animado de "Esperando compras..." */
+.loading-text::after {
+    content: '...';
+    animation: dot-animation 1.5s infinite step-start;
+}
+
+@keyframes dot-animation {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}
+
+/* ... el resto de tu style.css continua aquí ... */
+
+/* ============================================= */
+/* ANIMACIÓN DE DESVANECIMIENTO (Fade-in on scroll) */
+/* (Este es un estilo genérico que usarás en todas tus páginas) */
+/* ============================================= */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Zone - Noticias y Novedades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    <style>
+        /* Estilos específicos para la vista de lista de noticias (Epic Games Style) */
+        .noticia-item {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            transition: background-color 0.3s;
+        }
+        .noticia-item:hover {
+            background-color: #383838;
+            cursor: pointer; 
+        }
+        .noticia-img-list {
+            width: 150px; 
+            height: 85px; 
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0; 
+        }
+        .noticia-content {
+            flex-grow: 1;
+            padding-left: 15px;
+        }
+        .noticia-content h5 {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .noticia-content p {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        /* CORRECCIÓN 1: Estilo para la fecha de la lista secundaria de noticias (HACE 7 DÍAS) */
+        .noticia-item .text-muted {
+            color: #f0f0f0 !important; /* Fuerza el color blanco */
+            font-weight: bold; 
+        }
+
+        /* CORRECCIÓN 2: Estilo para la fecha de las noticias principales (3 de Noviembre, 2025) */
+        #noticias-principal .card-body .text-muted {
+            color: #f0f0f0 !important; /* Blanco, para que destaque en la tarjeta oscura */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="alumnos-info container-fluid">
+        <div class="container">
+            <p>Proyecto de Diseño Web. Alumnos:</p>
+            <p>Jorge Rafid Medina Porras | Miguel Moises Olivares Novelo | Rudy Daniel Navarrete Catzin</p>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="inicio.html">🎮 Gamer Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="noticias.html">Noticias</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li> 
+                    <li class="nav-item me-2"><a class="nav-link" href="carrito.html"><i class="bi bi-cart"></i> Carrito</a></li>
+                </ul>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        
+        <section id="noticias-principal" class="py-3 animate-on-scroll">
+            <h1 class="section-title text-center mb-5">📰 Últimas Novedades y Noticias Gamer</h1>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3 h-100">
+                        <img src="imagenes/jura.jpg" class="img-fluid rounded mb-3" alt="Noticia Principal 1: Jurassic World" style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-info mt-2">Jurassic World Evolution 3 anuncia fecha de lanzamiento</h5>
+                            <p class="text-muted small">3 de Noviembre, 2025</p>
+                            <p class="card-text">Los desarrolladores confirman la fecha de lanzamiento para la esperada secuela de fantasía...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-3 h-100">
+                        <img src="imagenes/g.png" class="img-fluid rounded mb-3" alt="Noticia Principal 2: Gears of War" style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-info mt-2">¡Gears of War regresa y llega a PS5 con una versión renovada!</h5>
+                            <p class="text-muted small">3 de Noviembre, 2025</p>
+                            <p class="card-text">Gears of War, una de las sagas más famosas y reconocidas de la industria del gaming....</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-secondary my-5 animate-on-scroll">
+
+        <section id="noticias-secundarias" class="py-3">
+            <h2 class="section-title animate-on-scroll">✨ Más Artículos Destacados</h2>
+            
+            <div class="row">
+                <div class="col-12">
+                    
+                    <div class="noticia-item d-flex align-items-center animate-on-scroll">
+                        <img src="imagenes/mana.jpg" class="noticia-img-list" alt="Football Manager 26" onerror="this.onerror=null; this.src='//via.placeholder.com/600x180/3F51B5/FFFFFF?text=FM26';">
+                        <div class="noticia-content">
+                            <p class="text-muted small mb-1">HACE 1 MES</p>
+                            <h5>Las razones del lanzamiento atrasado de Football Manager 26</h5>
+                            <p class="mb-0">"Ya iba siendo hora". Sobre un año en blanco, el fútbol femenino y los avances tácticos y de autenticidad que hacen que FM26 merezca la pena la espera.</p>
+                        </div>
+                    </div>
+
+                    <div class="noticia-item d-flex align-items-center animate-on-scroll">
+                        <img src="imagenes/blood.png" class="noticia-img-list" alt="Blood Refreshed Supply" onerror="this.onerror=null; this.src='//via.placeholder.com/600x180/FF0000/FFFFFF?text=BLOOD';">
+                        <div class="noticia-content">
+                            <p class="text-muted small mb-1">HACE 3 DÍAS</p>
+                            <h5>Blood: Refreshed Supply es el amanecer de una nueva era para Nightdive</h5>
+                            <p class="mb-0">Stephen Kick, de Nightdive, habla sobre crear un "Gearbox interno", los documentales al estilo de Digital Eclipse y lo que la reciente colaboración con Warner Bros. podría significar para futuros proyectos.</p>
+                        </div>
+                    </div>
+
+                    <div class="noticia-item d-flex align-items-center animate-on-scroll">
+                        <img src="imagenes/dd.png" class="noticia-img-list" alt="Darkside Detective Gratis" onerror="this.onerror=null; this.src='//via.placeholder.com/600x180/FF9800/1A1A1A?text=JUEGO+GRATIS';">
+                        <div class="noticia-content">
+                            <p class="text-muted small mb-1">HACE 3 DÍAS</p>
+                            <h5>The Darkside Detective es gratis esta semana en la Epic Games Store para móviles</h5>
+                            <p class="mb-0">Un juego de aventura y misterio que no te puedes perder. ¡Disponible por tiempo limitado en la tienda!</p>
+                        </div>
+                    </div>
+
+                    <div class="noticia-item d-flex align-items-center animate-on-scroll">
+                        <img src="imagenes/pw.jpg" class="noticia-img-list" alt="PowerWash Simulator 2" onerror="this.onerror=null; this.src='//via.placeholder.com/600x180/2196F3/FFFFFF?text=POWERWASH+2';">
+                        <div class="noticia-content">
+                            <p class="text-muted small mb-1">HACE 12 DÍAS</p>
+                            <h5>Para PowerWash Simulator 2, FuturLab tuvo que decidir qué elementos incluir y cuáles eliminar</h5>
+                            <p class="mb-0">En su búsqueda de la satisfacción, FuturLab tuvo que encontrar un equilibrio entre realidad y jugabilidad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="noticia-item d-flex align-items-center animate-on-scroll">
+                        <img src="imagenes/co.png" class="noticia-img-list" alt="El Auge de los juegos cozy" onerror="this.onerror=null; this.src='//via.placeholder.com/600x180/4CAF50/FFFFFF?text=COZY+GAMES';">
+                        <div class="noticia-content">
+                            <p class="text-muted small mb-1">HACE 13 DÍAS</p>
+                            <h5>El auge de los juegos cozy</h5>
+                            <p class="mb-0">Desde Stardew Valley hasta Animal Crossing y el auge durante la COVID, charlamos con desarrolladores, jugadores y una psicóloga especializada en videojuegos sobre el incremento de los juegos relajantes.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>🎮 Gamer Zone</h5>
+                    <p>La mejor tienda online de videojuegos y accesorios.</p>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Calle Principal #123, Ciudad Gamer</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="productos.html" class="text-white text-decoration-none">Catálogo Completo</a></li>
+                        <li><a href="ofertas.html" class="text-white text-decoration-none">Ver Ofertas</a></li>
+                        <li><a href="noticias.html" class="text-white text-decoration-none">Últimas Noticias</a></li>
+                        <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                        <li><a href="login.html" class="text-white text-decoration-none">Mi Cuenta</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center pt-3 border-top border-light opacity-50">
+                    <p class="mb-0">&copy; 2025 Gamer Zone. Todos los derechos reservados. | Proyecto de Diseño Web.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sesion.js"></script>
+    <script>
+        // Script para la animación de desvanecimiento al bajar (Fade-in on scroll)
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    element.classList.add('is-visible');
+                }
+            });
+        }
+        window.addEventListener('load', checkVisibility);
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+</body>
+</html>
