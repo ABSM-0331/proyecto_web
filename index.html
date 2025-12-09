@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer Zone - Videojuegos y Consolas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <div class="alumnos-info container-fluid">
@@ -19,78 +21,93 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="inicio.html">🎮 Gamer Zone</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">🎮 Gamer Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li> 
-                    <li class="nav-item me-2"><a class="nav-link" href="carrito.html"><i class="bi bi-cart"></i> Carrito</a></li>
-                
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                     </li>
-                    
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="carrito.html"><i class="bi bi-cart"></i>
+                            Carrito</a></li>
+
+                    </li>
+
                     <li class="nav-item" id="navUserLink" style="display: none;">
-                        </li>
-                    
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid p-0"> 
-        
-        <section id="home"> 
-            
-            <div id="carruselBannerPrincipal" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="container-fluid p-0">
+
+        <section id="home">
+
+            <div id="carruselBannerPrincipal" class="carousel slide mb-5" data-bs-ride="carousel"
+                data-bs-interval="4000">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner"> 
+                <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="imagenes/1er.jpg" class="carousel-banner-img d-block w-100" alt="Banner Slide 1: Promociones Destacadas" onerror="this.src='//via.placeholder.com/1200x500/4CAF50/FFFFFF?text=PROMO+1'">
+                        <img src="imagenes/1er.jpg" class="carousel-banner-img d-block w-100"
+                            alt="Banner Slide 1: Promociones Destacadas"
+                            onerror="this.src='//via.placeholder.com/1200x500/4CAF50/FFFFFF?text=PROMO+1'">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Grandes Descuentos de Lanzamiento</h5>
                             <p>¡Aprovecha hasta 50% en títulos seleccionados!</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="imagenes/gtavl.jpg" class="carousel-banner-img d-block w-100" alt="Banner Slide 2: Nuevos Videojuegos" onerror="this.src='//via.placeholder.com/1200x500/3F51B5/FFFFFF?text=VIDEOJUEGO+NUEVO'">
+                        <img src="imagenes/gtavl.jpg" class="carousel-banner-img d-block w-100"
+                            alt="Banner Slide 2: Nuevos Videojuegos"
+                            onerror="this.src='//via.placeholder.com/1200x500/3F51B5/FFFFFF?text=VIDEOJUEGO+NUEVO'">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Lanzamiento Exclusivo - ¡Ya Disponible!</h5>
                             <p>El juego más esperado de la temporada.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="imagenes/ps.jpg" class="carousel-banner-img d-block w-100" alt="Banner Slide 3: Consolas o Hardware" onerror="this.src='//via.placeholder.com/1200x500/FF9800/1A1A1A?text=CONSOLA+NEXT+GEN'">
+                        <img src="imagenes/ps.jpg" class="carousel-banner-img d-block w-100"
+                            alt="Banner Slide 3: Consolas o Hardware"
+                            onerror="this.src='//via.placeholder.com/1200x500/FF9800/1A1A1A?text=CONSOLA+NEXT+GEN'">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>¡Consolas Next-Gen en Stock!</h5>
                             <p>Unidades limitadas. ¡Compra la tuya hoy!</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselBannerPrincipal"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carruselBannerPrincipal" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselBannerPrincipal"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </section>
     </div>
-    
+
     <div class="container">
-        
+
         <h1 class="section-title text-center animate-on-scroll">¡Bienvenido a la Zona Gamer!</h1>
-        
+
         <div class="row text-center mb-5 animate-on-scroll">
             <div class="col-md-4 mb-3">
                 <a href="productos.html" class="btn btn-lg w-100 btn-primary">Ver Catálogo</a>
@@ -104,7 +121,8 @@
         </div>
 
         <h2 class="section-title animate-on-scroll">🔥 Productos Populares de la Semana</h2>
-        <div id="carruselPopulares" class="carousel slide animate-on-scroll" data-bs-ride="carousel" data-bs-interval="3000">
+        <div id="carruselPopulares" class="carousel slide animate-on-scroll" data-bs-ride="carousel"
+            data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row justify-content-center">
@@ -149,18 +167,20 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carruselPopulares" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselPopulares"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carruselPopulares" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselPopulares"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
-        
+
         <hr class="border-secondary my-5 animate-on-scroll">
-        
+
     </div>
 
     <footer class="footer mt-5">
@@ -177,7 +197,8 @@
                         <li><a href="productos.html" class="text-white text-decoration-none">Catálogo Completo</a></li>
                         <li><a href="ofertas.html" class="text-white text-decoration-none">Ver Ofertas</a></li>
                         <li><a href="noticias.html" class="text-white text-decoration-none">Últimas Noticias</a></li>
-                        <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                        <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a>
+                        </li>
                         <li><a href="login.html" class="text-white text-decoration-none">Mi Cuenta</a></li>
                     </ul>
                 </div>
@@ -197,8 +218,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scroll-reveal.js"></script> 
-    
-    <script src="js/sesion.js"></script> 
+    <script src="js/scroll-reveal.js"></script>
+
+    <script src="js/sesion.js"></script>
 </body>
+
 </html>

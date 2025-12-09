@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
         /* Estilos base para el fondo y tipografía */
@@ -24,23 +25,28 @@
             margin-bottom: 30px;
             font-weight: bold;
         }
-        
+
         /* Estilos para las tarjetas del equipo */
         .card {
-            background-color: #121212 !important; /* Más oscuro para que el texto resalte */
+            background-color: #121212 !important;
+            /* Más oscuro para que el texto resalte */
             border: 1px solid #333;
-            transition: transform 0.2s, box-shadow 0.2s; 
+            transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255,152,0,0.2); /* Sombra sutil con el color principal */
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.2);
+            /* Sombra sutil con el color principal */
         }
-        
+
         /* [MODIFICACIÓN 1] Reduce el tamaño de la imagen principal y la centra */
         .about-hero-img {
-            max-width: 80%; /* Se reduce al 80% del ancho de su columna */
-            display: block; 
-            margin: 0 auto; /* Se centra en su columna */
+            max-width: 80%;
+            /* Se reduce al 80% del ancho de su columna */
+            display: block;
+            margin: 0 auto;
+            /* Se centra en su columna */
         }
 
         /* ============================================= */
@@ -67,25 +73,27 @@
         </div>
     </div>
 
- <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-        <a class="navbar-brand" href="inicio.html">🎮 Gamer Zone</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
-                <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li>
-                <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="carrito.html"><i class="bi bi-cart-fill"></i> Carrito</a></li> 
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🎮 Gamer Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ofertas.html">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carrito.html"><i class="bi bi-cart-fill"></i>
+                            Carrito</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-    
+    </nav>
+
     <div class="container py-5">
         <h1 class="section-title text-center animate-on-scroll">Acerca de Gamer Zone 🚀</h1>
 
@@ -93,10 +101,14 @@
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
                     <p class="lead text-warning fw-bold">Nuestra Misión</p>
-                    <p class="fs-5">En Gamer Zone, nuestra misión es simple: ser el destino principal para la comunidad gamer en México. Ofrecemos una curada selección de las mejores consolas, componentes de PC y accesorios de alta calidad, garantizando precios justos y un servicio al cliente excepcional.</p>
+                    <p class="fs-5">En Gamer Zone, nuestra misión es simple: ser el destino principal para la comunidad
+                        gamer en México. Ofrecemos una curada selección de las mejores consolas, componentes de PC y
+                        accesorios de alta calidad, garantizando precios justos y un servicio al cliente excepcional.
+                    </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="imagenes/game.png" class="img-fluid rounded shadow-lg about-hero-img" alt="Setup de gaming profesional" style="border: 2px solid #ff9800;">
+                    <img src="imagenes/game.png" class="img-fluid rounded shadow-lg about-hero-img"
+                        alt="Setup de gaming profesional" style="border: 2px solid #ff9800;">
                 </div>
             </div>
             <hr style="border-color: #444;" class="my-5 animate-on-scroll">
@@ -104,37 +116,42 @@
                 <div class="col-lg-4 text-center mb-4">
                     <i class="bi bi-gear-fill display-4 text-primary"></i>
                     <h3 class="mt-3 text-info">Tecnología de Vanguardia</h3>
-                    <p class="text-secondary">Solo ofrecemos los productos más nuevos y potentes, desde CPUs de última generación hasta las tarjetas gráficas más demandadas.</p>
+                    <p class="text-secondary">Solo ofrecemos los productos más nuevos y potentes, desde CPUs de última
+                        generación hasta las tarjetas gráficas más demandadas.</p>
                 </div>
                 <div class="col-lg-4 text-center mb-4">
                     <i class="bi bi-award-fill display-4 text-primary"></i>
                     <h3 class="mt-3 text-info">Calidad Garantizada</h3>
-                    <p class="text-secondary">Trabajamos directamente con marcas líderes para asegurar la autenticidad y el soporte completo en cada compra.</p>
+                    <p class="text-secondary">Trabajamos directamente con marcas líderes para asegurar la autenticidad y
+                        el soporte completo en cada compra.</p>
                 </div>
                 <div class="col-lg-4 text-center mb-4">
                     <i class="bi bi-truck display-4 text-primary"></i>
                     <h3 class="mt-3 text-info">Envío Rápido y Seguro</h3>
-                    <p class="text-secondary">Priorizamos la entrega de tus productos de manera eficiente para que puedas empezar a jugar lo antes posible.</p>
+                    <p class="text-secondary">Priorizamos la entrega de tus productos de manera eficiente para que
+                        puedas empezar a jugar lo antes posible.</p>
                 </div>
             </div>
         </section>
-        
+
         <hr style="border-color: #444;" class="my-5 animate-on-scroll">
 
-    </div> 
+    </div>
 
     <section class="py-5 mt-5 animate-on-scroll" style="background-color: #000; color: #fff;">
         <div class="container text-center">
             <h2 class="text-warning mb-4">Creado por Nuestro Equipo</h2>
-            <p class="text-light mb-5">Con pasión por los videojuegos y la tecnología, estos son los desarrolladores del proyecto.</p>
+            <p class="text-light mb-5">Con pasión por los videojuegos y la tecnología, estos son los desarrolladores del
+                proyecto.</p>
 
             <div class="row justify-content-center">
-                
+
                 <div class="col-md-3 col-sm-6 mb-4 animate-on-scroll">
                     <div class="card h-100 bg-dark text-center border-0">
-                        <div class="mx-auto mb-3" 
+                        <div class="mx-auto mb-3"
                             style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #ffc107; box-shadow: 0 0 15px rgba(255,193,7,0.6);">
-                            <img src="imagenes/fb.jpg" alt="Jorge Rafid Medina Porras" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="imagenes/fb.jpg" alt="Jorge Rafid Medina Porras"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h5 class="text-warning">Jorge Rafid Medina Porras</h5>
                         <p class="text-white">Desarrollador Frontend y Backend</p>
@@ -143,9 +160,11 @@
 
                 <div class="col-md-3 col-sm-6 mb-4 animate-on-scroll">
                     <div class="card h-100 bg-dark text-center border-0">
-                        <div class="mx-auto mb-3" 
+                        <div class="mx-auto mb-3"
                             style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #ffc107; box-shadow: 0 0 15px rgba(255,193,7,0.6);">
-                            <img src="imagenes/WhatsApp Image 2025-11-03 at 9.28.00 PM.jpeg" alt="Rudy Daniel Navarrete Catzin" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="imagenes/WhatsApp Image 2025-11-03 at 9.28.00 PM.jpeg"
+                                alt="Rudy Daniel Navarrete Catzin"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h5 class="text-warning">Rudy Daniel Navarrete Catzin</h5>
                         <p class="text-white">Desarrollador Frontend</p>
@@ -154,9 +173,11 @@
 
                 <div class="col-md-3 col-sm-6 mb-4 animate-on-scroll">
                     <div class="card h-100 bg-dark text-center border-0">
-                        <div class="mx-auto mb-3" 
+                        <div class="mx-auto mb-3"
                             style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #ffc107; box-shadow: 0 0 15px rgba(255,193,7,0.6);">
-                            <img src="imagenes/WhatsApp Image 2025-11-03 at 9.23.51 PM.jpeg" alt="Miguel Moises Olivares Novelo" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="imagenes/WhatsApp Image 2025-11-03 at 9.23.51 PM.jpeg"
+                                alt="Miguel Moises Olivares Novelo"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <h5 class="text-warning">Miguel Moises Olivares Novelo</h5>
                         <p class="text-white">Desarrollador Frontend y Backend</p>
@@ -165,7 +186,7 @@
             </div>
         </div>
     </section>
-    
+
     <footer class="footer mt-5">
         <div class="container">
             <div class="row">
@@ -180,7 +201,8 @@
                         <li><a href="productos.html" class="text-white text-decoration-none">Catálogo Completo</a></li>
                         <li><a href="ofertas.html" class="text-white text-decoration-none">Ver Ofertas</a></li>
                         <li><a href="noticias.html" class="text-white text-decoration-none">Últimas Noticias</a></li>
-                        <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                        <li><a href="sobre-nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a>
+                        </li>
                         <li><a href="login.html" class="text-white text-decoration-none">Mi Cuenta</a></li>
                     </ul>
                 </div>
@@ -216,4 +238,5 @@
         window.addEventListener('scroll', checkVisibility);
     </script>
 </body>
+
 </html>

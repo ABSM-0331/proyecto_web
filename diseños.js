@@ -1,7 +1,7 @@
 // diseños.js
 
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const app = express();
 const port = 3000;
 
@@ -9,12 +9,12 @@ const port = 3000;
 // Asumiendo que todos tus archivos están en el directorio raíz o en subcarpetas como 'css' o 'imagenes'.
 app.use(express.static(path.join(__dirname)));
 
-// Ruta principal (/) para cargar inicio.html
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'inicio.html'));
+// Ruta principal (/) para cargar index.html
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Puedes agregar rutas para los otros archivos HTML si lo deseas, 
+// Puedes agregar rutas para los otros archivos HTML si lo deseas,
 // o dejar que el navegador los acceda directamente:
 // app.get('/productos.html', (req, res) => { res.sendFile(path.join(__dirname, 'productos.html')); });
 

@@ -3,10 +3,10 @@
 // LÓGICA: Maneja Registro/Compra (UPDATE/INSERT) y Login (SELECT)
 // ================================================
 
-const express = require('express');
-const mysql = require('mysql2');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const express = require("express");
+const mysql = require("mysql2");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 const port = 3000;
@@ -18,47 +18,52 @@ app.use(bodyParser.json());
 // 1. CONFIGURACIÓN DE LA BASE DE DATOS
 // ----------------------------------------------------
 const db = mysql.createConnection({
-    host: 'localhost', 
-    user: 'root',      
-    password: 'JesusR20', // <--- Asegúrate que esta contraseña sea correcta
-    database: 'gamerzone', 
+    host: "maglev.proxy.rlwy.net",
+    user: "root",
+    port: 58632,
+    // Usa la contraseña que sabes que funciona, o prueba con '' si 12345 falla.
+    password: "OGZWATizvFxkZtrZRSRfSWXCrfufidkr",
+    // ¡CORREGIDO! Usamos la BD 'gamerzone' que acabas de crear
+    database: "railway",
 });
 
-db.connect(err => {
+db.connect((err) => {
     if (err) {
-        console.error('Error al conectar a la base de datos:', err);
+        console.error("Error al conectar a la base de datos:", err);
         return;
     }
-    console.log('✅ Conexión a MySQL establecida correctamente.');
+    console.log("✅ Conexión a MySQL establecida correctamente.");
 });
 
 // ----------------------------------------------------
 // 2. RUTA PARA REGISTRO/FINALIZAR COMPRA (/registro)
 // USADO POR: login.html (Realiza INSERT si es nuevo, o UPDATE si ya existe)
 // ----------------------------------------------------
-app.post('/registro', (req, res) => {
+app.post("/registro", (req, res) => {
     const data = req.body;
-    console.log('Datos recibidos del formulario de registro/compra:', data);
+    console.log("Datos recibidos del formulario de registro/compra:", data);
 
     const nombreCompleto = `${data.nombres} ${data.apellidos}`;
 
-    const { 
-        email, 
-        password, 
-        direccion, 
+    const {
+        email,
+        password,
+        direccion,
         nombre_titular_tarjeta,
-        numero_tarjeta, 
-        caducidad_tarjeta, 
-        cvv_tarjeta 
+        numero_tarjeta,
+        caducidad_tarjeta,
+        cvv_tarjeta,
     } = data;
-    
+
     // 1. Verificar si el usuario ya existe por email
-    const checkSql = 'SELECT email FROM usuarios WHERE email = ?';
+    const checkSql = "SELECT email FROM usuarios WHERE email = ?";
 
     db.query(checkSql, [email], (checkErr, checkResults) => {
         if (checkErr) {
-            console.error('Error al verificar email:', checkErr);
-            return res.status(500).json({ message: 'Error interno del servidor al verificar el usuario.' });
+            console.error("Error al verificar email:", checkErr);
+            return res.status(500).json({
+                message: "Error interno del servidor al verificar el usuario.",
+            });
         }
 
         if (checkResults.length > 0) {
@@ -76,34 +81,39 @@ app.post('/registro', (req, res) => {
                 WHERE email = ?
             `;
             const updateValues = [
-                nombreCompleto, 
-                direccion || null, 
-                nombre_titular_tarjeta || null, 
-                numero_tarjeta || null, 
-                caducidad_tarjeta || null, 
+                nombreCompleto,
+                direccion || null,
+                nombre_titular_tarjeta || null,
+                numero_tarjeta || null,
+                caducidad_tarjeta || null,
                 cvv_tarjeta || null,
-                email
+                email,
             ];
 
             db.query(updateSql, updateValues, (updateErr, updateResult) => {
                 if (updateErr) {
-                    console.error('Error al actualizar en MySQL:', updateErr);
-                    return res.status(400).json({ message: 'Error al actualizar los datos de la compra.' });
+                    console.error("Error al actualizar en MySQL:", updateErr);
+                    return res.status(400).json({
+                        message: "Error al actualizar los datos de la compra.",
+                    });
                 }
-                res.status(200).json({ 
-                    message: 'Compra procesada y datos de envío/pago actualizados con éxito.', 
+                res.status(200).json({
+                    message:
+                        "Compra procesada y datos de envío/pago actualizados con éxito.",
                     nombre_completo: nombreCompleto,
-                    email: email
+                    email: email,
                 });
             });
-
         } else {
             // =========================
             // LÓGICA DE INSERCIÓN (Usuario nuevo, se registra y compra)
             // =========================
             if (!password) {
                 // Esto no debería pasar si el login.html está correcto y pide la contraseña al no estar logueado.
-                return res.status(400).json({ message: 'Error: La contraseña es requerida para crear una nueva cuenta.' });
+                return res.status(400).json({
+                    message:
+                        "Error: La contraseña es requerida para crear una nueva cuenta.",
+                });
             }
 
             const insertSql = `
@@ -121,26 +131,29 @@ app.post('/registro', (req, res) => {
             `;
 
             const insertValues = [
-                nombreCompleto, 
-                email, 
-                password, 
-                direccion || null, 
-                nombre_titular_tarjeta || null, 
-                numero_tarjeta || null, 
-                caducidad_tarjeta || null, 
-                cvv_tarjeta || null
+                nombreCompleto,
+                email,
+                password,
+                direccion || null,
+                nombre_titular_tarjeta || null,
+                numero_tarjeta || null,
+                caducidad_tarjeta || null,
+                cvv_tarjeta || null,
             ];
 
             db.query(insertSql, insertValues, (insertErr, insertResult) => {
                 if (insertErr) {
-                    console.error('Error al insertar en MySQL:', insertErr);
-                    return res.status(400).json({ message: 'Error en la base de datos. Verifica tus datos de registro.' });
+                    console.error("Error al insertar en MySQL:", insertErr);
+                    return res.status(400).json({
+                        message:
+                            "Error en la base de datos. Verifica tus datos de registro.",
+                    });
                 }
-                
-                res.status(201).json({ 
-                    message: 'Compra procesada y cuenta creada con éxito.', 
+
+                res.status(201).json({
+                    message: "Compra procesada y cuenta creada con éxito.",
                     nombre_completo: nombreCompleto,
-                    email: email
+                    email: email,
                 });
             });
         }
@@ -151,36 +164,45 @@ app.post('/registro', (req, res) => {
 // 3. RUTA PARA INICIAR SESIÓN (/login)
 // USADO POR: login2.html (Verificación de credenciales)
 // ----------------------------------------------------
-app.post('/login', (req, res) => {
+app.post("/login", (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-        return res.status(400).json({ message: 'Error: Faltan el email o la contraseña.' });
+        return res
+            .status(400)
+            .json({ message: "Error: Faltan el email o la contraseña." });
     }
 
     // Busca nombre_completo y password en la misma tabla de usuarios
-    const sql = 'SELECT nombre_completo, password FROM usuarios WHERE email = ?';
+    const sql =
+        "SELECT nombre_completo, password FROM usuarios WHERE email = ?";
 
     db.query(sql, [email], (err, results) => {
         if (err) {
-            console.error('Error de consulta en MySQL:', err);
-            return res.status(500).json({ message: 'Error interno del servidor.' });
+            console.error("Error de consulta en MySQL:", err);
+            return res
+                .status(500)
+                .json({ message: "Error interno del servidor." });
         }
 
         if (results.length === 0) {
-            return res.status(401).json({ message: 'Credenciales incorrectas. Email no encontrado.' });
+            return res.status(401).json({
+                message: "Credenciales incorrectas. Email no encontrado.",
+            });
         }
 
         const user = results[0];
 
         // Comparamos la contraseña
         if (password === user.password) {
-            res.status(200).json({ 
-                message: 'Inicio de sesión exitoso.', 
-                nombre_completo: user.nombre_completo 
+            res.status(200).json({
+                message: "Inicio de sesión exitoso.",
+                nombre_completo: user.nombre_completo,
             });
         } else {
-            res.status(401).json({ message: 'Credenciales incorrectas. Contraseña inválida.' });
+            res.status(401).json({
+                message: "Credenciales incorrectas. Contraseña inválida.",
+            });
         }
     });
 });
@@ -189,11 +211,13 @@ app.post('/login', (req, res) => {
 // 4. RUTA DE OBTENCIÓN DE DATOS DE USUARIO (/obtener-datos-usuario)
 // USADO POR: login.html (Para precargar el formulario de compra)
 // ----------------------------------------------------
-app.get('/obtener-datos-usuario', (req, res) => {
+app.get("/obtener-datos-usuario", (req, res) => {
     const email = req.query.email;
 
     if (!email) {
-        return res.status(400).json({ success: false, message: 'Falta el email.' });
+        return res
+            .status(400)
+            .json({ success: false, message: "Falta el email." });
     }
 
     const sql = `
@@ -211,22 +235,28 @@ app.get('/obtener-datos-usuario', (req, res) => {
 
     db.query(sql, [email], (err, results) => {
         if (err) {
-            console.error('Error al obtener datos del usuario:', err);
-            return res.status(500).json({ success: false, message: 'Error interno del servidor.' });
+            console.error("Error al obtener datos del usuario:", err);
+            return res.status(500).json({
+                success: false,
+                message: "Error interno del servidor.",
+            });
         }
 
         if (results.length === 0) {
-            return res.status(404).json({ success: false, message: 'Usuario no encontrado.' });
+            return res
+                .status(404)
+                .json({ success: false, message: "Usuario no encontrado." });
         }
 
         res.status(200).json({ success: true, usuario: results[0] });
     });
 });
 
-
 // ----------------------------------------------------
 // 5. INICIO DEL SERVIDOR EXPRESS
 // ----------------------------------------------------
 app.listen(port, () => {
-    console.log(`🚀 Servidor Express.js corriendo en: http://localhost:${port}`);
+    console.log(
+        `🚀 Servidor Express.js corriendo en: http://localhost:${port}`
+    );
 });
